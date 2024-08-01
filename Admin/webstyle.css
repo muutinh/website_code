@@ -1,0 +1,175 @@
+#container {
+    width: 100%;
+    margin: auto 0px;
+    background-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Barlow, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar {
+    width: 13%;
+    height: 100vh;
+    background: #F9F2E6;
+    color: #fff;
+    position: fixed;
+    float: left;
+    border-right: 2px solid #DF8A8A;
+}
+
+#sidebar h2 {
+    text-align: center;
+    margin-top: -25px;
+}
+
+#sidebar h2 img {
+    width: 150px;
+    height: auto;
+
+}
+
+#sidebar ul {
+    color: #10090d81;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -50px;
+}
+
+#sidebar ul li {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 2px solid #DF8A8A;
+}
+
+#sidebar ul li:hover {
+    background-color: #DF8A8A;
+    color: #fff;
+}
+
+#header {
+    font-size: 13px;
+    font-weight: bold;
+    background: #F9F2E6;
+    color: #935a5ac9;
+    padding: 20px;
+    text-align: center; 
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0; 
+    width: auto; 
+    border-bottom: 2px solid #DF8A8A;
+}
+
+
+#content {
+    background-color: white;
+    width: 87%;
+    height: auto;
+    float: left;
+    margin-left: 13.2%;
+    margin-top: 85px;
+
+}
+
+#Data_tb table thead tr th {
+    width: 12.5%;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#Data_tb table tbody tr td {
+    height: 20%;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+#footer {
+    font-size: x-small;
+    background: #FFE5EC;
+    color: #10090d81;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid #DF8A8A;
+}
+
+#hover_img:hover {
+    transform: scale(1.1);
+    /* Phóng to ảnh 10% khi hover */
+    transition: transform 0.3s ease-in-out;
+    /* Hiệu ứng chuyển đổi mượt mà trong 0.3 giây */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        float: none; /* Loại bỏ float để đảm bảo layout chính xác */
+    }
+
+    #header {
+        left: 0; /* Đảm bảo header chiếm toàn bộ chiều rộng */
+        margin-top: auto; /* Điều chỉnh vị trí của header */
+    }
+
+    #content {
+        margin-top: 20px; /* Điều chỉnh vị trí của nội dung */
+        margin-left: 0; /* Loại bỏ margin trái để nội dung chiếm toàn bộ chiều rộng */
+        float: none; /* Loại bỏ float */
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    #Data_tb table,
+    #Data_tb thead,
+    #Data_tb tbody,
+    #Data_tb th,
+    #Data_tb td,
+    #Data_tb tr {
+        display: block;
+    }
+
+    #Data_tb th,
+    #Data_tb td {
+        text-align: right;
+        padding-left: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    #header h2 {
+        text-align: left; /* Căn lề tiêu đề bên trái */
+        padding-left: 15px; /* Thêm một chút padding để không dính sát lề */
+    }
+}
+
+@media (max-width: 480px) {
+    #header h2 {
+        text-align: left; /* Đảm bảo tiêu đề vẫn căn lề trái trên các màn hình rất nhỏ */
+        padding-left: 10px; /* Giảm padding trên màn hình nhỏ hơn */
+    }
+    /* Các quy tắc khác cho #Data_tb table và các thành phần con */
+}

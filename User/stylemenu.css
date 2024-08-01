@@ -1,0 +1,201 @@
+/* body{
+    background-color: #f9f2e6;
+} */
+
+#menu-container{
+    border-top: 1px solid #dcceb5 ;
+    background-color: #f9f2e6 ;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 45px
+}
+
+.container{
+    max-width: 100%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0
+    /* height: 10px; */
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    justify-content: flex-start;
+    margin-left: 140px;
+}
+
+#main-menu li{
+    position: relative;
+    white-space: nowrap; /* Prevents wrapping */
+    padding-right: 100px;
+}
+
+#main-menu li a{
+    color: #ff678d;
+    display: block;
+    padding: 10px 25px;
+    margin-left: 60px;
+    /* padding: 18px 20px; */
+    text-decoration: none;
+    font-family: Barlow, sans-serif;
+    font-size: 13px;
+}
+
+#main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #f9f2e6;
+    /* background-color:black; */
+    padding: 10px 0;
+    list-style: none;
+    width: 190px;
+    border: 1px solid #ab2647;
+    display: none;
+    z-index: 999;
+    left: 60px;
+}
+
+#main-menu li:hover>ul.sub-menu{
+    display: block;
+}
+#main-menu ul.sub-menu a{
+    padding: 8px 0 ;
+    border-bottom: 1px solid #ffeed1;
+    left: 0;
+}
+#main-menu ul.sub-menu li:hover a{
+    border-bottom: 1px solid #f2b6c5;
+}
+#main-menu ul.sub-menu li:last-child a{
+    border: none;
+}
+
+#main-menu ul.sub-menu ul.sub-menu{
+    left: 190px;
+    top: 0;
+}
+
+/*Thiết lập border khi hover*/
+
+#main-menu>li>a{
+    position: relative;
+}
+#main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: #ff678d;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none;
+}
+#main-menu>li:hover>a::before{
+    width: 100%;
+    display: block;
+}
+
+#main-menu ul.sub-menu ul.sub-menu>li>a{
+    position: relative;
+}
+#main-menu ul.sub-menu ul.sub-menu>li>a::before{
+    content: "";
+    height: 2px;
+    width: 0px;
+    background: #ff678d;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none;
+}
+#main-menu ul.sub-menu ul.sub-menu>li:hover>a::before{
+    width: 100%;
+    display: block;
+}
+
+/* #menu-container .icon {
+    display: none
+} */
+
+#toggle{
+    background:#f9f2e6;
+    color: #ff678d;
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none
+}
+
+/* @media screen and (max-width: 768px) {
+    #main-menu li{
+        display: none;
+        z-index: 999;
+    }
+    #menu-container .icon {
+        float: left;
+        display: block;
+        color: #ff678d;
+        padding: 10px;
+        padding-top: 2px;
+    }
+} */
+
+/* @media screen and (max-width: 991px) {
+    #main-menu{
+        flex-direction: column;
+        text-align: left;
+    }
+    #toggle{
+        display: block;
+    }
+    
+    nav{
+        display: none;
+    }
+}  */
+@media screen and (max-width: 991px) {
+    #main-menu {
+        flex-direction: column;
+        text-align: left;
+    }
+    #toggle {
+        display: block;
+    }
+
+    nav {
+        display: none; /* Ẩn menu */
+    }
+
+    #main-menu li {
+        position: relative;
+    }
+
+    /* #main-menu ul.sub-menu {
+        display: none; /* Ẩn sub-menu */
+    } */
+
+    #main-menu ul.submenu {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    #main-menu ul.submenu ul.submenu {
+        flex-direction: column;
+        text-align: left;
+    }
+    #main-menu li:hover > ul.sub-menu ul.submenu {
+        display: block; /* Hiển thị sub-menu khi hover */
+        position: static; /* Hiển thị sub-menu dọc */
+    }

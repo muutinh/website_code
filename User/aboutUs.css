@@ -1,0 +1,117 @@
+body {
+    font-family: Barlow, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #ffe5ec;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.image-overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-overlay img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    background: none;
+    color: #481E14;
+}
+
+h1, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3), (min-resolution: 290dpi) {
+    .overlay-text {
+        font-size: 80%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-overlay {
+        height: auto;
+    }
+
+    .overlay-text {
+        width: 70%;
+        padding: 10px;
+        font-size: 90%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-overlay {
+        height: auto;
+    }
+
+    .overlay-text {
+        width: 80%;
+    }
+
+    body {
+        justify-content: flex-start;
+        height: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .overlay-text {
+        background: #000000;
+        opacity: 50%;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        width: 100%; 
+        padding: 20px; 
+        text-align: center; 
+    }
+}

@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    font-family: Barlow, sans-serif;
+}
+body {
+    margin: 0;
+    background-color: #f9f2e6;
+    font-family: Barlow, sans-serif;
+}
+header {
+    width: 100%;
+    background-color: black;
+    height: 20%;
+}
+footer {
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+#container {
+    width: 100%;
+    background-color: white;
+    height: auto;
+}
+#container .content {
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+}
+.content a {
+    text-align: center;
+    color: gray;
+    text-decoration: none;
+}
+.content a:hover {
+    color: black;
+    cursor: pointer;
+}
+.navigate{
+    margin: 0;
+    text-align: center;
+    padding-top: 3%;
+}
+.navigation-bar {
+    width: 100%;
+    height: auto;
+}
+/* Thanh tiến trình */
+.step-wizard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.step-wizard-list{
+    list-style-type: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+.step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 170px;
+    position: relative;
+}
+.step-wizard-item + .step-wizard-item:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background: #FB6F92;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+.progress-count{
+    height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+}
+.progress-count:after{
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: #FB6F92;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+.progress-count:before{
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+.progress-label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before{
+    display: none;
+}
+.current-item ~ .step-wizard-item .progress-count:after{
+    height:10px;
+    width:10px;
+}
+.current-item ~ .step-wizard-item .progress-label{
+    opacity: 0.5;
+}
+.current-item .progress-count:after{
+    background: #fff;
+    border: 2px solid #FB6F92;
+}
+.current-item .progress-count{
+    color: #FB6F92;
+}
+.infor {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 4%;
+}
+/* Làm khung đăng nhập có chứa địa chỉ (page cửa sổ địa chỉ 08) */
+.personal-infor {
+    flex: 55%;
+    padding: 2%;
+}
+#name, #address, #address-con, #city, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.submit {
+    background-color: #FB6F92;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+.submit[type=submit]:hover {
+    background-color: #FB6F92;
+}
+.col-trai {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-phai {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 800px) {
+    .personal-infor {
+        flex: 100%;
+    }
+    .img-order {
+        flex: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .col-trai, .col-phai, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}
+
+/* phần sản phẩm */
+.img-order {
+    flex: 45%;
+    height: auto;
+    padding: 5%;
+}
+.order-items {
+    padding: 10px;
+    border: 2px solid grey;
+    height: auto;
+    width: 100%;
+}
+.col-trais {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-giua {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+.col-phais {
+    float: right;
+    width: fit-content;
+    margin-top: 6px;
+}
